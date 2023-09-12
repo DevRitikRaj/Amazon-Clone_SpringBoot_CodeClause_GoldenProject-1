@@ -1,0 +1,32 @@
+.AdvertisementOne_main{
+    height: 300px;
+    width: 240px;
+    background-color: white;
+    margin: 7px;
+
+
+}
+
+
+
+.AdvertisementOne_header{
+    font-size: 17px;
+    line-height: 24px;
+    font-weight: bold;
+    padding: 15px;
+
+
+}
+
+
+.AdvertisementOne_body{
+    padding-left: 15px;
+
+}
+
+.AdvertisementOne_footer{
+    margin-left: 15px;
+    margin-top: 5px;
+    color: blue;
+
+}

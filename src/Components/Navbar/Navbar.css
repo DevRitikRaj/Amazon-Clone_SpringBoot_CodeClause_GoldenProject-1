@@ -121,3 +121,24 @@
     color: yellow;
     font-size: 20px;
 }
+.navbar_footer{
+
+height: 40px;
+width: 100vw;
+background-color: #232F3E;
+display:flex;
+color: white;
+}
+
+.navbar_footer_text{
+    margin: 11px 16px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.navbar_footer_text_side{
+
+margin-top: 5px;
+margin-left: 50px;
+/* font-weight: bold; */
+}
