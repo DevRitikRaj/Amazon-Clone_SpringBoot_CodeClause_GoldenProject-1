@@ -4,32 +4,58 @@ import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 
 function PlaceOrder() {
-  return (
-    <div>
+    return (
+        <div>
 
-            <Grid container>  
-            
-            <Grid item xs={6}>
-              <img  className='placeorder_image' src='https://ik.imagekit.io/amazon8064/amazon-image/mobiles/71w3oJ7aWyL._AC_UL640_FMwebp_QL65_.webp?updatedAt=1693939464375'/>
+            <Grid container>
+
+                <Grid item xs={6}>
+                    <img className='placeorder_image' src='https://ik.imagekit.io/amazon8064/amazon-image/mobiles/71w3oJ7aWyL._AC_UL640_FMwebp_QL65_.webp?updatedAt=1693939464375' />
+                </Grid>
+
+                <Grid item xs={4}>
+                    <div className='placeorder_description' >
+                        <div style={{fontSize:"20px",fontWeight:500,lineHeight: "32px"}}>Apple iPhone 14 (128 GB) - Blue</div>
+                        <div>
+                            <Rating name="read-only" value="4" readOnly style={{ fontSize: "20px" }} />
+                            3,191 ratings |
+                            1000+ answered questions
+                        </div>
+                        <hr></hr>
+                        <div>
+
+                            <div className='textgap'>Price <span className='pricetag'>₹65,999</span></div>
+                            <div className='textgap'>Save extra with No Cost EMI</div>
+                            <div className='textgap'>EMI starts at ₹3,200. No Cost EMI available</div>
+                            <div>
+                                <div style={{fontWeight:"500",paddingBottom: "10px"}}>About this Item</div>
+                                <div>
+                                <li>15.54 cm (6.1-inch) Super Retina XDR display featuring Always-On and ProMotion</li>
+                                <li>Dynamic Island, a magical new way to interact with iPhone</li>
+                                <li>48MP Main camera for up to 4x greater resolution</li>
+                                <li>Cinematic mode now in 4K Dolby Vision up to 30 fps</li>
+                                <li>Vital safety technology — Crash Detection calls for help when you can’t</li>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </Grid>
+
+
+                <Grid item xs={2}>
+                    Order
+                </Grid>
+
+
             </Grid>
 
-            <Grid item xs={3}>
-              <div>Apple iPhone 14 (128 GB) - Blue</div>
-              <Rating name="read-only" value="4" readOnly style={{fontSize: "10px"}} />
-            </Grid>
 
 
-            <Grid item xs={3}>
-                Order
-            </Grid>
-
-            
-            </Grid>
-
-
-
-    </div>
-  )
+        </div>
+    )
 }
 
 export default PlaceOrder;

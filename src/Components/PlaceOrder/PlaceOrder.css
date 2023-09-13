@@ -1,0 +1,17 @@
+.placeorder_image{
+    height: 500px;
+    margin: 100px 150px;
+}
+
+.placeorder_description{
+    margin: 50px;
+  
+}
+
+.textgap{
+    margin: 10px;
+}
+.pricetag{
+   font-size: 24px; 
+   color: brown;
+}
