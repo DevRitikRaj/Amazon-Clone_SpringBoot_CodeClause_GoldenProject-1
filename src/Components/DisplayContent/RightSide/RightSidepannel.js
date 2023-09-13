@@ -1,10 +1,12 @@
 import React from "react";
+import "./RightSide.css";
 
 function RightSidepannel(props){
     return(
 
-        <div>
-            <h1>RightSide</h1>
+        <div className="Rightside_main">
+            RightSide
+         
         </div>
     );
 }

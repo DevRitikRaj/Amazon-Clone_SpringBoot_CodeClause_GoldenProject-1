@@ -6,7 +6,7 @@ import RightSidepannel from "./RightSide/RightSidepannel";
 function DisplayContent(props){
     return(
 
-        <div>
+        <div style={{display: "flex"}}>
            <div>
             <LeftSidepannel />
            </div>
