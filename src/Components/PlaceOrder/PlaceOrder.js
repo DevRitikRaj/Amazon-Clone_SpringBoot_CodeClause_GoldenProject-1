@@ -2,6 +2,9 @@ import React from 'react';
 import "./PlaceOrder.css";
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
+import Paper from '@mui/material/Paper';
+// import { Link } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function PlaceOrder() {
     return (
@@ -46,7 +49,23 @@ function PlaceOrder() {
 
 
                 <Grid item xs={2}>
-                    Order
+
+                    <Paper variant='outlined' className='placeorder_order'>
+
+                       
+                         <Link to="/checkout">
+                        <button className='placeorder_button addtocart'>Add to Cart</button>
+                        </Link>
+
+                       
+
+                   
+                        <button className='placeorder_button buynow'>Buy Now</button>
+                        
+
+
+                    </Paper>
+                    
                 </Grid>
 
 
