@@ -1,25 +1,178 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import "./PlaceOrder.css";
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 import Paper from '@mui/material/Paper';
-// import { Link } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
-function PlaceOrder() {
+function PlaceOrder(props) {
+    
+
+    const [ProductDetails,setProductDetails]= useState([]);
+    let { id } =useParams();
+    console.log(id);
+    useEffect(() =>{
+
+        let list=[
+
+            {
+                id: 1,
+                name: "New Apple iPhone 100",
+                rating: "34565",
+                review: "1000",
+                emi: "2401",
+                delivery: "Wednesday, Aug 18",
+                price: "50999",
+                status: "In stock",
+                soldby: "Darshita Electronics",
+                image:
+                    "https://ik.imagekit.io/amazon123/71i2XhHU3pL._AC_UL640_FMwebp_QL65__bSvBM9yyu9E.webp?updatedAt=1628852293583",
+                about: [
+                    "6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display",
+                    "Water and dust resistant (2 meters for up to 30 minutes, IP68)",
+                    "Dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video up to 60fps",
+                    "Face ID for secure authentication",
+                ],
+            },
+
+            {
+                id: 2,
+                name: "New Apple iPhone 11",
+                rating: "34565",
+                review: "1000",
+                // emi: "2401",
+                // delivery: "Wednesday, Aug 18",
+                price: "50999",
+                // status: "In stock",
+                // soldby: "Darshita Electronics",
+                image:
+                    "https://ik.imagekit.io/amazon123/71ZOtNdaZCL._AC_UL640_FMwebp_QL65__mSWkMhTkWnT.webp?updatedAt=1628852292388",
+                about: [
+                    "Desription for iphone 11 -bla bla",
+                    "6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display",
+                    "Water and dust resistant (2 meters for up to 30 minutes, IP68)",
+                    "Dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video up to 60fps",
+                    "Face ID for secure authentication",
+                ],
+            },
+
+
+            {
+                id: 3,
+                name: "Iphone12",
+                rating: "34565",
+                review: "1000",
+                emi: "2401",
+                delivery: "Wednesday, Aug 18",
+                price: "76543",
+                status: "In stock",
+                soldby: "Darshita Electronics",
+                image:
+                    "https://ik.imagekit.io/amazon123/71w3oJ7aWyL._AC_UL640_FMwebp_QL65__vN39lpgzi.webp?updatedAt=1628852294578",
+                about: [
+                    "Desription for iphone 12 -bla bla",
+                    "6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display",
+                    "Water and dust resistant (2 meters for up to 30 minutes, IP68)",
+                    "Dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video up to 60fps",
+                    "Face ID for secure authentication",
+                ],
+            },
+
+            {
+                id: 4,
+                name: "Iphone13",
+                rating: "34565",
+                review: "1000",
+                emi: "2401",
+                delivery: "Wednesday, Aug 18",
+                price: "637357",
+                status: "In stock",
+                soldby: "Darshita Electronics",
+                image:
+                    "https://ik.imagekit.io/amazon123/51PuFBgBK4L._AC_UL640_FMwebp_QL65__3iZl6oRR-.webp?updatedAt=1628852291461",
+                about: [
+                    "Desription for iphone 13 -bla bla",
+                    "6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display",
+                    "Water and dust resistant (2 meters for up to 30 minutes, IP68)",
+                    "Dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video up to 60fps",
+                    "Face ID for secure authentication",
+                ],
+            },
+
+
+            {
+                id: 5,
+                name: "Iphone14",
+                rating: "34565",
+                review: "1000",
+                emi: "2401",
+                delivery: "Wednesday, Aug 18",
+                price: "76543",
+                status: "In stock",
+                soldby: "Darshita Electronics",
+                image:
+                    "https://ik.imagekit.io/amazon123/71w3oJ7aWyL._AC_UL640_FMwebp_QL65__vN39lpgzi.webp?updatedAt=1628852294578",
+                about: [
+                    "Desription for iphone 12 pro pmax -bla bla",
+                    "6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display",
+                    "Water and dust resistant (2 meters for up to 30 minutes, IP68)",
+                    "Dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video up to 60fps",
+                    "Face ID for secure authentication",
+                ],
+            },
+
+
+            {
+                id: 6,
+                name: "Iphone15",
+                rating: "637357",
+                review: "1000",
+                emi: "2401",
+                delivery: "Wednesday, Aug 18",
+                price: "50999",
+                status: "In stock",
+                soldby: "Darshita Electronics",
+                image:
+                    "https://ik.imagekit.io/amazon123/71i2XhHU3pL._AC_UL640_FMwebp_QL65__bSvBM9yyu9E.webp?updatedAt=1628852293583",
+                about: [
+                    "Desription for iphone 13 -bla mini bla",
+                    "6.1-inch (15.5 cm diagonal) Liquid Retina HD LCD display",
+                    "Water and dust resistant (2 meters for up to 30 minutes, IP68)",
+                    "Dual-camera system with 12MP Ultra Wide and Wide cameras; Night mode, Portrait mode, and 4K video up to 60fps",
+                    "Face ID for secure authentication",
+                ],
+            },
+        ];
+
+       //fake APi
+       
+       let itemfilter = list.filter ( item => {
+        if(item.id== id) return item;
+    })
+
+    console.log(itemfilter); 
+    setProductDetails(itemfilter[0]);
+},[]);
+
+
+
+
+
     return (
         <div>
 
             <Grid container>
 
                 <Grid item xs={6}>
-                    <img className='placeorder_image' src='https://ik.imagekit.io/amazon8064/amazon-image/mobiles/71w3oJ7aWyL._AC_UL640_FMwebp_QL65_.webp?updatedAt=1693939464375' />
+                    <img className='placeorder_image' src='https://ik.imagekit.io/amazon8064/amazon-image/mobiles/71LRBr1aLNS._AC_UL640_FMwebp_QL65_.webp?updatedAt=1693939464514' />
                 </Grid>
 
                 <Grid item xs={4}>
                     <div className='placeorder_description' >
-                        <div style={{fontSize:"20px",fontWeight:500,lineHeight: "32px"}}>Apple iPhone 14 (128 GB) - Blue</div>
+                        <div style={{fontSize:"20px",fontWeight:500,lineHeight: "32px"}}>{ProductDetails.name}</div>
                         <div>
+
+                            
                             <Rating name="read-only" value="4" readOnly style={{ fontSize: "20px" }} />
                             3,191 ratings |
                             1000+ answered questions
