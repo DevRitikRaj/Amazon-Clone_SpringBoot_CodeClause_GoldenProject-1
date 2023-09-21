@@ -1,16 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import "./PlaceOrder.css";
 import Grid from '@mui/material/Grid';
 import Rating from '@mui/material/Rating';
 import Paper from '@mui/material/Paper';
 import { Link, useParams } from 'react-router-dom';
+import { CartContext } from '../CartContext';
 
 function PlaceOrder(props) {
-    
 
+    const {item,size,increment} = useContext(CartContext);    
+     
     const [ProductDetails,setProductDetails]= useState([]);
     let { id } =useParams();
     console.log(id);
+
+    const addToCart =function(){
+        increment(ProductDetails);
+    }
+
+
     useEffect(() =>{
 
         let list=[
@@ -22,7 +30,7 @@ function PlaceOrder(props) {
                 review: "1000",
                 emi: "2401",
                 delivery: "Wednesday, Aug 18",
-                price: "50999",
+                price: "509990",
                 status: "In stock",
                 soldby: "Darshita Electronics",
                 image:
@@ -42,7 +50,7 @@ function PlaceOrder(props) {
                 review: "1000",
                 // emi: "2401",
                 // delivery: "Wednesday, Aug 18",
-                price: "50999",
+                price: "509",
                 // status: "In stock",
                 // soldby: "Darshita Electronics",
                 image:
@@ -174,13 +182,13 @@ function PlaceOrder(props) {
 
                             
                             <Rating name="read-only" value="4" readOnly style={{ fontSize: "20px" }} />
-                            3,191 ratings |
+                           {ProductDetails.rating}  ratings |
                             1000+ answered questions
                         </div>
                         <hr></hr>
                         <div>
 
-                            <div className='textgap'>Price <span className='pricetag'>₹65,999</span></div>
+                            <div className='textgap'>Price <span className='pricetag'>₹{ProductDetails.price}</span></div>
                             <div className='textgap'>Save extra with No Cost EMI</div>
                             <div className='textgap'>EMI starts at ₹3,200. No Cost EMI available</div>
                             <div>
@@ -206,15 +214,15 @@ function PlaceOrder(props) {
                     <Paper variant='outlined' className='placeorder_order'>
 
                        
-                         <Link to="/checkout">
-                        <button className='placeorder_button addtocart'>Add to Cart</button>
-                        </Link>
+                         
+                        <button className='placeorder_button addtocart'onClick={addToCart}>Add to Cart</button>
+                        
 
                        
 
-                   
+                        <Link to="/checkout">
                         <button className='placeorder_button buynow'>Buy Now</button>
-                        
+                        </Link>
 
 
                     </Paper>

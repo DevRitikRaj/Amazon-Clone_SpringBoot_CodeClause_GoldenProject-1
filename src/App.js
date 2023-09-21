@@ -6,64 +6,19 @@ import Navbar from './Components/Navbar/Navigation';
 import PlaceOrder from './Components/PlaceOrder/PlaceOrder';
 import Checkout from './Components/CheckOut/checkout';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-// function App() {
-//   return (
-//     <Router>
-
-//       <div className="App">
-//         <Navbar />
-
-//         <Routes>
-
-//           <Route path="/display">
-//             <DisplayContent />
-
-//           </Route>
-
-//           <Route path="/order">
-//           <PlaceOrder />
-
-//           </Route>
-
-//           <Route path="/checkout">
-//           <Checkout />
-
-//           </Route>
-
-//           <Route path="">
-//           <MainPage/>
-
-//           </Route>
-
-
-
-          
-
-
-
-
-
-
-          
-
-          
-          
-
-//         </Routes>
-
-//       </div>
-//     </Router>
-//   );
-// }
-
-// export default App;
+// import CartContextProvider from './Components/CartContext';
+import CartProvider from './Components/CartContext';
 
 
 
 const App = () => {
   return (
     <Router>
+      
+      {/* <CartContextProvider> */}
+      <CartProvider>
       <Navbar />
+     
       <Routes>
       
         <Route path="/" element={<MainPage/>} />
@@ -71,6 +26,9 @@ const App = () => {
         <Route path="/order/:id" element={<PlaceOrder />} />
         <Route path="/display" element={<DisplayContent />} />
       </Routes>
+      {/* </CartContextProvider> */}
+      </CartProvider>
+    
     </Router>
   );
 };
